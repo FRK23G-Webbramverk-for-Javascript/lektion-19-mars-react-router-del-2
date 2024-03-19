@@ -1,3 +1,4 @@
+import './Product.css';
 import { useNavigate } from "react-router-dom";
 
 function Product(props) {
@@ -12,13 +13,14 @@ function Product(props) {
     }
 
     return (
-        <article>
-            <img src={ props.image } alt="" />
-            <h2>{ props.title }</h2>
-            <h3>{ props.brand }</h3>
-            <p>{ props.description }</p>
-            <button onClick={ handleClick }>Add to cart</button>
-            <button onClick={ goToProductInfo }>Se mer info</button>
+        <article className='product'>
+            <img src={ props.image } alt="" className='product__image' />
+            <h2 className='product__title'>{ props.title }</h2>
+            <p className='product__price'>{ props.price } kr</p>
+            <footer className='product__buttons'>
+                <button onClick={ handleClick } className='product__button'>Add to cart</button>
+                <button onClick={ goToProductInfo } className='product__button'>Se mer info</button>
+            </footer>
         </article>
     )
 }

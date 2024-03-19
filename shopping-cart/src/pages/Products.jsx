@@ -1,3 +1,4 @@
+import './Products.css';
 import { useState, useEffect } from 'react';
 
 import Header from '../components/Header/Header';
@@ -22,8 +23,8 @@ function Products() {
         return <Product 
                 title={ product.title } 
                 brand={ product.brand } 
-                description={ product.description } 
-                image={ product.images[0] }
+                price={ product.price } 
+                image={ product.thumbnail }
                 key={ product.id }
                 setAmount={ setAmount }
                 amount={ amount }
@@ -33,7 +34,7 @@ function Products() {
     return (
         <section>
             <Header amount={ amount } />
-            <section>
+            <section className='products'>
                 { productComponents }
             </section>
         </section>
